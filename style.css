@@ -72,7 +72,7 @@ body {
   top: 140px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 570px) {
   button {
     width: 100px;
     height: 100px;
