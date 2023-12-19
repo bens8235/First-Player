@@ -3,7 +3,7 @@ const circlesArr = Array.from(circles);
 let circlesArrSlice = [];
 const winner = document.getElementById("winner");
 let randNum = 0;
-let firstPlayerPicked = false;
+let firstPlayerPicked = true;
 let numOfPlayers = 0;
 const players = document.getElementsByClassName("player");
 let count = 1;
@@ -50,7 +50,6 @@ click.addEventListener("click", function () {
       counter += 1;
     }
     if (counter === numOfPlayers) {
-      console.log("hello");
       setTimeout(function () {
         if (count === 1) {
           randomNumber();
