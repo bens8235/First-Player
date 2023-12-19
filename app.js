@@ -9,6 +9,7 @@ const players = document.getElementsByClassName("player");
 let count = 1;
 let counter = 0;
 const click = document.getElementById("click");
+const circle = document.getElementById("circles");
 
 function numberOfPlayers() {
   circlesArrSlice = circlesArr.slice(0, numOfPlayers);
@@ -34,6 +35,8 @@ window.addEventListener("keydown", function (event) {
             for (let i = 0; i < circlesArrSlice.length; i++) {
               if (randNum - 1 !== i) {
                 circlesArrSlice[i].style.visibility = "hidden";
+              } else {
+                circle.classList.add("wiggle");
               }
             }
           }
@@ -59,6 +62,8 @@ click.addEventListener("click", function () {
           for (let i = 0; i < circlesArrSlice.length; i++) {
             if (randNum - 1 !== i) {
               circlesArrSlice[i].style.visibility = "hidden";
+            } else {
+              circle.classList.add("wiggle");
             }
           }
         }
@@ -69,8 +74,13 @@ click.addEventListener("click", function () {
 
 for (let i = 0; i < players.length; i++) {
   players[i].addEventListener("click", function () {
+    for (let i = 0; i < players.length; i++) {
+      players[i].classList.remove("btnselect");
+    }
+    players[i].classList.add("btnselect");
     for (let i = 0; i < circles.length; i++) {
       circles[i].style.visibility = "hidden";
+      circle.classList.remove("wiggle");
       winner.innerHTML = "";
       firstPlayerPicked = false;
       count = 1;
